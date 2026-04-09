@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playezy/core/utills/app_assets.dart';
 import 'package:playezy/features/auth/presentation/screens/onboarding/phone_entry_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -16,11 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: [
           
           Positioned.fill(
-            child:Image.asset(
-  'assets/images/cricket_bg.png', 
-  fit: BoxFit.cover,
-
-            ),
+            child: Image.asset(AppAssets.cricketBg, fit: BoxFit.cover), 
           ),
 
           // Dark gradient overlay
@@ -64,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: ClipRRect(           
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
-                      'assets/images/logo.png',
+                      AppAssets.logo,
                       width: 80,
                       height: 80,
                       fit: BoxFit.contain,
