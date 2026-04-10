@@ -42,8 +42,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               children: [
                 const Spacer(),
-
-              
                 Container(
                   width: 80,
                   height: 80,

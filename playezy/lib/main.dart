@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:playezy/features/auth/presentation/screens/onboarding/welcome_screen.dart';
+import 'package:playezy/features/auth/presentation/screens/onboarding/phone_entry_screen.dart';
+
 
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const WelcomeScreen(),
+      home: const PhoneEntryScreen(),
     );
   }
 }
@@ -32,8 +33,6 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
-
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -75,4 +74,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
