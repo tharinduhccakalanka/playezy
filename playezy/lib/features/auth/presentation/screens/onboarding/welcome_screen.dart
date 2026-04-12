@@ -12,12 +12,15 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
           
           Positioned.fill(
-            child: Image.asset(AppAssets.cricketBg, fit: BoxFit.cover), 
+            child: Image.asset(AppAssets.cricketBg, fit: BoxFit.cover,
+            
+            ), 
           ),
 
           // Dark gradient overlay
@@ -110,6 +113,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                 const SizedBox(height: 36),
 
+                //button 
                 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -196,7 +200,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ],
                 ),
 
-                const SizedBox(height: 40),
+                const SizedBox(height: 20,),
               ],
             ),
           ),
