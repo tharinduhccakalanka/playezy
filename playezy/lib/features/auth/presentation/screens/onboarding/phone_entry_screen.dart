@@ -18,22 +18,25 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
     return Scaffold(
       body: Stack(
         children: [
-
           //bg image
-Positioned.fill(
-          child: Image.asset(AppAssets.cricketBg, fit: BoxFit.cover,
-            ), 
-        ),
-         Positioned(
-          top: 75,
-          left: 24,
-           child: Column(
-             children: [
-              //logo
-               Container(
-                       child: Image.asset(AppAssets.logo, width: AppAssets.logoWidth, height: AppAssets.logoHeight,
-               fit: BoxFit.contain,),),
-               const SizedBox(height: 8,),
+          Positioned.fill(
+            child: Image.asset(AppAssets.cricketBg, fit: BoxFit.cover),
+          ),
+          Positioned(
+            top: 75,
+            left: 24,
+            child: Column(
+              children: [
+                //logo
+                Container(
+                  child: Image.asset(
+                    AppAssets.logo,
+                    width: AppAssets.logoWidth,
+                    height: AppAssets.logoHeight,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                const SizedBox(height: 8),
                 Text(
                   "Playezy",
                   style: TextStyle(
@@ -43,13 +46,12 @@ Positioned.fill(
                     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
                   ),
                 ),
-             ],
-           ),
-         ),
+              ],
+            ),
+          ),
 
           // Bottom container
-           
-           Positioned(
+          Positioned(
             top: 489,
             left: 0,
             right: 0,
@@ -70,23 +72,17 @@ Positioned.fill(
                 ),
               ),
 
-
-child: Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Header
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(
-                      bottom: 16,
-                    ),
+                    padding: EdgeInsets.only(bottom: 16),
                     decoration: const BoxDecoration(
                       border: Border(
-                        bottom: BorderSide(
-                          color: Color(0xFFE0E0E0),
-                          width: 1,
-                        ),
+                        bottom: BorderSide(color: Color(0xFFE0E0E0), width: 1),
                       ),
                     ),
                     child: Stack(
@@ -95,8 +91,11 @@ child: Column(
                         Text(
                           "Let’s Get Started",
                           style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Color(0xFF0F0F0F),
+
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'Manrope-Bold',
                           ),
                         ),
                         Positioned(
@@ -109,94 +108,103 @@ child: Column(
                       ],
                     ),
                   ),
-              
-                    const SizedBox(height: 10),
-              
-                    const Text(
+
+                  const SizedBox(height: 10),
+
+                  Center(
+                    child: Text(
                       "Enter your phone number to create your account.",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-              
-                    const SizedBox(height: 20),
-              
-                    // Phone Input
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(12),
+                      style: TextStyle(
+                        color: Color(0xFF1D1A27),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Manrope-Regular',
+
                       ),
-                      child: Row(
-                        children: [
-                          // Flag 
-                          const Text("🇱🇰"),
-                          const SizedBox(width: 8),
-              
-                          const Text(
-                            "+94",
-                            style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 10,
+                      bottom: 10,
+                      left: 24,
+                      right: 24,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFECECEC),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Phone Number",
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+
+                        const SizedBox(height: 4),
+
+                        Row(
+                          children: [
+                            const Text("🇱🇰", style: TextStyle(fontSize: 18)),
+                            const SizedBox(width: 6),
+
+                            const Text("+94", style: TextStyle(fontSize: 16)),
+
+                            const Icon(Icons.keyboard_arrow_down, size: 18),
+
+                            const SizedBox(width: 10),
+
+                          
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(height: 20),
+
+                  // Continue Button
+                  SizedBox(
+                    width: 380,
+                    height: 60,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(),
+                        padding: EdgeInsets.zero,
+                      ),
+                      onPressed: () {},
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: AppColors.btngradient,
                           ),
-              
-                          const Icon(Icons.arrow_drop_down),
-              
-                          const SizedBox(width: 10),
-              
-                          const Expanded(
-                            child: TextField(
-                              keyboardType: TextInputType.phone,
-                              decoration: InputDecoration(
-                                hintText: "Phone Number",
-                                border: InputBorder.none,
-                              ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            "Continue",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-              
-                    const SizedBox(height: 20),
-              
-                    // Continue Button
-                    SizedBox(
-                      width: 343,
-                      height: 60,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            
-                          ),
-                          padding: EdgeInsets.zero,
-                        ),
-                        onPressed: () {},
-                        child: Ink(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: AppColors.btngradient),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Continu",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
                         ),
                       ),
                     ),
-              
-                    const SizedBox(height: 10),
-                  ],
-                ),
+                  ),
+
+                  const SizedBox(height: 10),
+                ],
               ),
             ),
-        
-          
+          ),
         ],
       ),
     );
   }
 }
-
