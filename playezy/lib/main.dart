@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playezy/features/auth/presentation/screens/onboarding/phone_entry_screen.dart';
+import 'package:playezy/features/auth/presentation/screens/onboarding/welcome_screen.dart';
 
 
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const PhoneEntryScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:playezy/core/utills/app_assets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playezy/core/utills/app_colors.dart';
+import 'package:playezy/core/widgets/custom_button.dart';
 
 class PhoneEntryScreen extends StatefulWidget {
   const PhoneEntryScreen({super.key});
@@ -25,18 +28,21 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
           Positioned(
             top: 75,
             left: 24,
-            child: Column(
+            child: Column(         
+              mainAxisAlignment: MainAxisAlignment.center,  
               children: [
-                //logo
-                Container(
-                  child: Image.asset(
-                    AppAssets.logo,
-                    width: AppAssets.logoWidth,
-                    height: AppAssets.logoHeight,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                const SizedBox(height: 8),
+               Container(
+                  width: 80,
+                    child: Image.asset(
+                      AppAssets.logo,
+                      width: AppAssets.logoWidth,
+                      height: AppAssets.logoHeight,
+                      fit: BoxFit.contain, // 
+                    ),
+    ),
+
+               SizedBox(height: 8),
+
                 Text(
                   "Playezy",
                   style: TextStyle(
@@ -44,6 +50,8 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
+                    height: 0.9, // 
+                    letterSpacing: -1,
                   ),
                 ),
               ],
@@ -109,7 +117,7 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 35),
 
                   Center(
                     child: Text(
@@ -119,12 +127,11 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Manrope-Regular',
-
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 15),
 
                   Container(
                     padding: const EdgeInsets.only(
@@ -157,46 +164,18 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
                             const Icon(Icons.keyboard_arrow_down, size: 18),
 
                             const SizedBox(width: 10),
-
-                          
                           ],
                         ),
                       ],
                     ),
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 35),
 
                   // Continue Button
-                  SizedBox(
-                    width: 380,
-                    height: 60,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(),
-                        padding: EdgeInsets.zero,
-                      ),
-                      onPressed: () {},
-                      child: Ink(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: AppColors.btngradient,
-                          ),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Continue",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
+                  CustomButton(text: "Continue", onPressed: () {}),
+                  
 
                   const SizedBox(height: 10),
                 ],
@@ -208,3 +187,41 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
     );
   }
 }
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 60,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(),
+          padding: EdgeInsets.zero,
+        ),
+        onPressed: () {},
+        child: Ink(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: AppColors.btngradient,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Center(
+            child: Text(
+              "Continue",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily:
+                    GoogleFonts.monomaniacOne().fontFamily,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
